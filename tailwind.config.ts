@@ -9,11 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        activeTab: '#F2890F',
+        activeOrange: '#F2890F',
+        activeYellow:'#FEC432',
         baseTextColor: '#F0F0F0',
         lightText: '#E6E6E6',
         blackText: '#1F1E25',
         lightGreen: '#C1C2CA',
+        iconGrey: '#535353',
+        iconRed: '#FF3535',
+        iconViolet: '#8A43FF',
+        iconBlue: '#3A94E7',  
       },
       backgroundColor: {
         orangeBg: '#F2890F',
