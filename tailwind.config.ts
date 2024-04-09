@@ -8,9 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        main_bg_image: "url('/bg.jpg')",
+      },
+      boxShadow: {
+        '3xl': '0px -4px 8px -4px rgba(255, 255, 255, 0.25)',
+      },
       colors: {
         activeOrange: '#F2890F',
-        activeYellow:'#FEC432',
+        activeYellow: '#FEC432',
         baseTextColor: '#F0F0F0',
         lightText: '#E6E6E6',
         blackText: '#1F1E25',
@@ -18,11 +24,14 @@ const config: Config = {
         iconGrey: '#535353',
         iconRed: '#FF3535',
         iconViolet: '#8A43FF',
-        iconBlue: '#3A94E7',  
+        iconBlue: '#3A94E7',
+        borderColor: '#D9D9D9',
       },
       backgroundColor: {
         orangeBg: '#F2890F',
         greyBg: '#C6C4C2',
+        lightGrey: '#615E5C',
+        activeYellow: '#FEC432',
       },
     },
   },

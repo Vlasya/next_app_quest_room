@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
-import { Raleway, Raleway_Dots } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 import './globals.css';
 import { Header, Footer } from '@/components/organisms';
+import QueryProviders from '../providers/queryClientProviders';
 
 const inter = Raleway({ subsets: ['cyrillic'], style: ['normal'] });
 
@@ -17,11 +18,15 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <header>
-          <Header />
-        </header>
-        <main>{children}</main>
+      <body
+        className={`${inter.className} 
+         bg-[url("/bg.jpg")] bg-no-repeat bg-cover 
+         `}
+      >
+        <Header />
+        <main>
+          <QueryProviders>{children}</QueryProviders>
+        </main>
         <footer>
           <Footer />
         </footer>
