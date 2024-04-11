@@ -3,6 +3,7 @@ import { Raleway } from 'next/font/google';
 import './globals.css';
 import { Header, Footer } from '@/components/organisms';
 import QueryProviders from '../providers/queryClientProviders';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Raleway({ subsets: ['cyrillic'], style: ['normal'] });
 
@@ -20,12 +21,15 @@ const RootLayout = ({
     <html lang='en'>
       <body
         className={`${inter.className} 
-         bg-[url("/bg.jpg")] bg-no-repeat bg-cover 
+     
          `}
       >
         <Header />
         <main>
-          <QueryProviders>{children}</QueryProviders>
+          <QueryProviders>
+            {children}
+            <Toaster position='top-right' />
+          </QueryProviders>
         </main>
         <footer>
           <Footer />

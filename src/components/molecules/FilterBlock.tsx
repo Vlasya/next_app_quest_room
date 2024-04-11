@@ -1,4 +1,3 @@
-'use client'
 import { FILTERS } from '@/constants';
 import React from 'react';
 import { FilterItem } from '@/components/atoms';
@@ -9,7 +8,6 @@ interface Props {
 }
 
 const FilterBlock = ({ activeFilter, onChangeFilter }: Props) => {
-    console.log('activeFilter',activeFilter)
   return (
     <div className='flex  w-max mt-[50px]'>
       {FILTERS.map((item) => (
@@ -17,7 +15,7 @@ const FilterBlock = ({ activeFilter, onChangeFilter }: Props) => {
           key={item.label}
           onChangeFilter={onChangeFilter}
           item={item}
-          isActive={activeFilter===item.type}
+          isActive={activeFilter === item.type}
         />
       ))}
     </div>

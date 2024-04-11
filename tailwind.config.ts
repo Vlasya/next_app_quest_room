@@ -26,12 +26,15 @@ const config: Config = {
         iconViolet: '#8A43FF',
         iconBlue: '#3A94E7',
         borderColor: '#D9D9D9',
+        btnText:'#270B00',
+        activeBtnText:'#514321'
       },
       backgroundColor: {
         orangeBg: '#F2890F',
         greyBg: '#C6C4C2',
         lightGrey: '#615E5C',
         activeYellow: '#FEC432',
+        baseDark:'#535353'
       },
     },
   },

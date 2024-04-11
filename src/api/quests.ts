@@ -1,7 +1,7 @@
 import { BASE_ENDPOINT, GUESTS } from '@/constants';
-import { Quests } from '@/types/quests';
+import { Quest } from '@/types/quests';
 
-export const getQuests = async ({}): Promise<Quests[]> => {
+export const getQuests = async ({}): Promise<Quest[]> => {
   try {
     const res = await fetch(`${BASE_ENDPOINT}${GUESTS}`);
 
