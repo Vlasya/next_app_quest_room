@@ -11,9 +11,9 @@ const NavigationTab = ({ link, name, isActive }: Props) => {
   return (
     <li className='mr-[47px] last:mr-0'>
       <Link
-        className={`uppercase  ${
-          isActive ? 'text-activeTab' : 'text-baseTextColor'
-        }`}
+        className={`
+        font-semibold  text-sm
+        ${isActive ? 'text-activeYellow' : 'text-baseTextColor'}`}
         href={link}
       >
         {name}

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
-import { Raleway, Raleway_Dots } from 'next/font/google';
+import { Raleway } from 'next/font/google';
 import './globals.css';
 import { Header, Footer } from '@/components/organisms';
+import QueryProviders from '../providers/queryClientProviders';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Raleway({ subsets: ['cyrillic'], style: ['normal'] });
 
@@ -17,11 +19,18 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang='en'>
-      <body className={inter.className}>
-        <header>
-          <Header />
-        </header>
-        <main>{children}</main>
+      <body
+        className={`${inter.className} 
+     
+         `}
+      >
+        <Header />
+        <main>
+          <QueryProviders>
+            {children}
+            <Toaster position='top-right' />
+          </QueryProviders>
+        </main>
         <footer>
           <Footer />
         </footer>

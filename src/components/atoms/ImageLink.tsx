@@ -4,17 +4,13 @@ import Image from 'next/image';
 
 interface Props {
   link: string;
-  image: string;
+  children: React.ReactNode;
 }
 
-const ImageLink = ({ link, image }: Props) => {
+const ImageLink = ({ link, children }: Props) => {
   return (
-    <Link
-      href={link}
-      className='w-[28px] h-[28px] rounded-full bg-greyBg flex justify-center items-center'
-      target='_blank'
-    >
-      <Image alt={image} src={image} width={20} height={20} />
+    <Link href={link} target='_blank'>
+      {children}
     </Link>
   );
 };

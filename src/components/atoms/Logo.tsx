@@ -5,7 +5,7 @@ import Image from 'next/image';
 const Logo = () => {
   return (
     <Link href={ROUTS.BASE_CATALOG} aria-label='Logo'>
-      <Image src='/logo.svg' width='134' height='50' alt='logo' />
+      <Image src='/logo.svg' width='42' height='42' alt='logo' />
     </Link>
   );
 };
