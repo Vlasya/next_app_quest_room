@@ -29,7 +29,7 @@ const QuestItem = ({ item }: Props) => {
         <p className='text-2xl font-bold'>{title}</p>
         <div className='flex items-center'>
           <InfoBlock borderHeight={5} isGrey icon={<PersonIcon />}>
-            {peopleCount[0]}-{peopleCount[1]} чел
+            {peopleCount[0]}-{peopleCount[1]} люд
           </InfoBlock>
           <InfoBlock isGrey icon={<PuzzleIcon />}>
             {COMPLEXITY[level]}
