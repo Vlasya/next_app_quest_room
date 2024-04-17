@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContactsPage = () => {
+const ContactsPage = async () => {
   return (
     <div className='flex flex-col py-[120px] px-[136px]'>
       <div className='flex flex-col mb-[30px] pb-8'>
@@ -10,9 +10,7 @@ const ContactsPage = () => {
       <div className='flex justify-between text-lightText ml-[30px]'>
         <div>
           <p className='mb-2 font-bold'>Адреса</p>
-          <p className='mb-9'>
-          Дніпро, вулиця Січеславська Набережна 5
-          </p>
+          <p className='mb-9'>Дніпро, вулиця Січеславська Набережна 5</p>
           <p className='mb-2 font-bold'>Години роботи</p>
           <p className='mb-9'>Цілодобово</p>
           <p className='mb-2 font-bold'>Телефон</p>
@@ -26,7 +24,7 @@ const ContactsPage = () => {
           width='650'
           height='300'
           loading='lazy'
-          style={{borderRadius:'16px'}}
+          style={{ borderRadius: '16px' }}
         ></iframe>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getQuest } from '@/api/actions/getQuest';
+import { getQuest } from '@/api/getQuest';
 import { InfoBlock, ModalBlock } from '@/components/molecules';
 import { ClockIcon, PersonIcon, PuzzleIcon } from '@/components/icons';
 import Image from 'next/image';
