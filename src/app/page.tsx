@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { GuestsBlock } from '@/components/organisms';
-import { getQuests } from '@/api/quests';
+import { getQuests } from '@/actions/db/getQuests';
 
 const Home = async () => {
   const quests = await getQuests();

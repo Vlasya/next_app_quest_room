@@ -4,8 +4,9 @@ import { ErrorField } from '@/components/atoms';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useMutation } from '@tanstack/react-query';
-import { sendForm } from '@/api/sendForm';
+
 import { toast } from 'react-hot-toast';
+import { sendForm } from '@/actions/http/sendForm';
 
 interface Props {
   onClose: () => void;

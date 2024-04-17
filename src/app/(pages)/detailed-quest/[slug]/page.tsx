@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
-import { getQuest } from '@/api/getQuest';
 import { InfoBlock, ModalBlock } from '@/components/molecules';
 import { ClockIcon, PersonIcon, PuzzleIcon } from '@/components/icons';
 import Image from 'next/image';
 import { COMPLEXITY, QUEST_TYPE } from '@/constants';
+import { getQuestById } from '@/actions/db/getQuestById';
 
 interface Props {
   params: { slug: string };
@@ -11,7 +11,7 @@ interface Props {
 
 const QuestDetailPage = async ({ params }: Props) => {
   const { slug } = params;
-  const data = await getQuest(slug);
+  const data = await getQuestById(slug);
   if (!data) {
     notFound();
   }
