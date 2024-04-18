@@ -1,3 +1,5 @@
+import { User } from '@/types';
+
 export interface FormType {
   name: string;
   phone: string;
@@ -5,12 +7,10 @@ export interface FormType {
   isLegal: boolean;
 }
 
-export interface SignUpFormType {
-  name: string;
-  email: string;
-  password: string;
+export interface SignUpFormType extends User {
   passwordConfirmation: string;
 }
+
 
 export interface SignInFormType {
   email: string;

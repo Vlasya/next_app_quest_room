@@ -22,7 +22,8 @@
       "@/constants": ["./src/constants/index"],
       "@/components": ["./src/components/*"],
       "@/types": ["./src/types/index"],
-      "@/modules": ["src/clients/*"],
+      "@/clients": ["./src/clients/index"],
+      "@/utils": ["./src/utils/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
