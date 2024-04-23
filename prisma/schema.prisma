@@ -14,8 +14,8 @@ datasource db {
 }
 
 model Quest {
-  id    Int    @id @default(autoincrement())
-  title String
+  id          Int    @id @default(autoincrement())
+  title       String
   description String
   previewImg  String
   coverImg    String
@@ -23,4 +23,11 @@ model Quest {
   level       String
   peopleCount Int[]
   duration    Int
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  username String
+  email    String @unique
+  password String
 }

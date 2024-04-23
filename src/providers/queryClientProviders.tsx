@@ -2,7 +2,7 @@
 
 import { ReactNode, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { getQueryClient } from '@/api/client';
+import { getQueryClient } from '@/clients/queryClient';
 
 interface Props {
   children: React.ReactNode | Iterable<ReactNode>;

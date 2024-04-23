@@ -1,24 +1,15 @@
-import { FormType } from '@/types';
+import { FormType, sendFormSchema } from '@/types';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ErrorField } from '@/components/atoms';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 import { useMutation } from '@tanstack/react-query';
-import { sendForm } from '@/api/sendForm';
+
 import { toast } from 'react-hot-toast';
+import { sendForm } from '@/actions/http/sendForm';
 
 interface Props {
   onClose: () => void;
 }
-
-const schema = yup
-  .object({
-    name: yup.string().required(),
-    phone: yup.string().required().length(10),
-    peopleCount: yup.number().required(),
-    isLegal: yup.boolean().oneOf([true], 'This field is required').required(),
-  })
-  .required();
 
 const Form = ({ onClose }: Props) => {
   const {
@@ -26,7 +17,7 @@ const Form = ({ onClose }: Props) => {
     formState: { errors: formErrors },
     register,
   } = useForm<FormType>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(sendFormSchema),
     defaultValues: {
       isLegal: false,
     },

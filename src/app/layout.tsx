@@ -28,7 +28,7 @@ const RootLayout = ({
         <main>
           <QueryProviders>
             {children}
-            <Toaster position='top-right' />
+            <Toaster position='top-center' />
           </QueryProviders>
         </main>
         <footer>
