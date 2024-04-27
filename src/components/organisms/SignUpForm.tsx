@@ -7,8 +7,11 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { signUp } from '@/actions/db/auth';
 import toast from 'react-hot-toast';
 import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 const SignUpForm = () => {
+  const { t } = useTranslation();
+  
   const {
     handleSubmit,
     formState: { errors: formErrors },
@@ -39,7 +42,7 @@ const SignUpForm = () => {
       className=' bg-black p-[20px] rounded-[6px] flex flex-col'
     >
       <div className='flex flex-col mb-[30px] '>
-        <label htmlFor='name'>Name</label>
+        <label htmlFor='name'>{t('name')}</label>
         <input
           {...register('username')}
           className='w-[400px] h-[50px] bg-baseDark rounded-[6px] p-[5px] mt-[5px]'
@@ -52,20 +55,20 @@ const SignUpForm = () => {
         )}
       </div>
       <div className='flex flex-col mb-[30px] '>
-        <label htmlFor='email'>Email</label>
+        <label htmlFor='email'>{t('email')}</label>
         <input
           {...register('email')}
           className='w-[400px] h-[50px] bg-baseDark rounded-[6px] p-[5px] mt-[5px]'
           id='email'
           name='email'
-          placeholder='Email'
+          placeholder={t('email')}
         />
         {formErrors.email && (
           <ErrorField errorMessage={formErrors.email.message} />
         )}
       </div>
       <div className='flex flex-col mb-[30px] '>
-        <label htmlFor='password'>Password</label>
+        <label htmlFor='password'>{t('password')}</label>
         <input
           {...register('password')}
           className='w-[400px] h-[50px] bg-baseDark rounded-[6px] p-[5px] mt-[5px]'
@@ -78,7 +81,7 @@ const SignUpForm = () => {
         )}
       </div>
       <div className='flex flex-col mb-[30px] '>
-        <label htmlFor='passwordConfirmation'>Repeat Password</label>
+        <label htmlFor='passwordConfirmation'>{t('repeatPassword')}</label>
         <input
           {...register('passwordConfirmation')}
           className='w-[400px] h-[50px] bg-baseDark rounded-[6px] p-[5px] mt-[5px]'
@@ -94,7 +97,7 @@ const SignUpForm = () => {
         className='w-[230px] h-[47px] bg-activeYellow  text-activeBtnText rounded-[6px] self-center'
         type='submit'
       >
-        Sign Up
+       {t('signUp')}
       </button>
     </form>
   );

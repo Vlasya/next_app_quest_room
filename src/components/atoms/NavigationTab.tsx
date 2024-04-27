@@ -1,13 +1,17 @@
+'use client'
 import Link from 'next/link';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   link: string;
   name: string;
   isActive: boolean;
+
 }
 
-const NavigationTab = ({ link, name, isActive }: Props) => {
+const NavigationTab =  ({ link, name, isActive }: Props) => {
+  const { t } = useTranslation();
   return (
     <li className='mr-[47px] last:mr-0'>
       <Link
@@ -16,7 +20,7 @@ const NavigationTab = ({ link, name, isActive }: Props) => {
         ${isActive ? 'text-activeYellow' : 'text-baseTextColor'}`}
         href={link}
       >
-        {name}
+        {t(`${name}`)}
       </Link>
     </li>
   );

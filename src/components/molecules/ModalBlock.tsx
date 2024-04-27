@@ -2,8 +2,10 @@
 import { Dialog } from '@/components/molecules';
 import { Form } from '@/components/organisms';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ModalBlock = () => {
+  const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
 
   const handleToggleModal = () => {
@@ -19,11 +21,11 @@ const ModalBlock = () => {
         onClick={handleToggleModal}
         className='py-4 px-14 rounded-[6px] bg-activeYellow text-btnText font-semibold'
       >
-        Взяти участь
+        {t('participate')}
       </button>
       {showModal ? (
         <Dialog onClose={handleClose}>
-          <Form onClose={handleClose}/>
+          <Form onClose={handleClose} />
         </Dialog>
       ) : null}
     </>

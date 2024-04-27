@@ -10,11 +10,11 @@ export const ROUTS = {
 };
 
 export const PAGES_NAMES = {
-  CATALOG: 'Ігри',
-  FOR_BEGINNERS: 'Новачкам',
-  FEEDBACK: 'Відгуки',
-  DISCOUNT: 'Акції',
-  CONTACTS: 'Контакти',
+  CATALOG: 'catalog',
+  FOR_BEGINNERS: 'for_beginners',
+  FEEDBACK: 'feedback',
+  DISCOUNT: 'discount',
+  CONTACTS: 'contacts',
 };
 
 export const NAVIGATION_TABS: Tab[] = [

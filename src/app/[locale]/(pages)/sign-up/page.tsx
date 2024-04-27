@@ -1,8 +1,14 @@
+import initTranslations from '@/app/i18n';
 import { SignUpForm } from '@/components/organisms';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const SignUpPage = () => {
+interface Props {
+  params: { locale: string };
+}
+
+const SignUpPage = async ({ params: { locale } }: Props) => {
+  const { t } = await initTranslations(locale, ['default']);
   return (
     <>
       <Image
@@ -16,9 +22,9 @@ const SignUpPage = () => {
 
       <div className='flex flex-col items-center justify-center min-w-full min-h-[80vh]'>
         <div className='mb-[20px]'>
-          Sign up or{' '}
+          {t('signUpTitle')}
           <Link className='ml-[10px] text-activeOrange' href={'/sign-in'}>
-            Sign in
+            {t('signIn')}
           </Link>
         </div>
 

@@ -5,3 +5,4 @@ export { default as Form } from './Form';
 export { default as GuestsBlock } from './GuestsBlock';
 export { default as SignUpForm } from './SignUpForm';
 export { default as SignInForm } from './SignInForm';
+export { default as LanguageChanger } from './LanguageChanger';

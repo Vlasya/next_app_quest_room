@@ -1,8 +1,10 @@
-
+import initTranslations from '@/app/i18n';
 import { Logo, PhoneLink } from '@/components/atoms';
 import { LogOutBtn, NavigationTabsBlock } from '@/components/molecules';
-import {  NAVIGATION_TABS } from '@/constants';
+import { NAVIGATION_TABS } from '@/constants';
+
 import { getAuthCookies } from '@/utils';
+import { LanguageChanger } from '@/components/organisms';
 
 const Header = async () => {
   const isAuth = await getAuthCookies();
@@ -13,6 +15,7 @@ const Header = async () => {
       <NavigationTabsBlock tabs={NAVIGATION_TABS} />
       <div className='flex'>
         <PhoneLink />
+        <LanguageChanger />
         <div>{isAuth && <LogOutBtn />}</div>
       </div>
     </header>

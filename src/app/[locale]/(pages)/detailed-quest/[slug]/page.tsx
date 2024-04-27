@@ -4,12 +4,14 @@ import { ClockIcon, PersonIcon, PuzzleIcon } from '@/components/icons';
 import Image from 'next/image';
 import { COMPLEXITY, QUEST_TYPE } from '@/constants';
 import { getQuestById } from '@/actions/db/getQuestById';
+import initTranslations from '@/app/i18n';
 
 interface Props {
-  params: { slug: string };
+  params: { slug: string; locale: string };
 }
 
 const QuestDetailPage = async ({ params }: Props) => {
+  const { t } = await initTranslations(params.locale, ['default']);
   const { slug } = params;
   const data = await getQuestById(slug);
   if (!data) {
@@ -32,7 +34,7 @@ const QuestDetailPage = async ({ params }: Props) => {
       <div className='flex flex-col items-end h-full pt-[120px] bg-cover bg-center'>
         <div className='flex flex-col w-[780px] items-start'>
           <p className='mb-2 text-[--text-color-secondary] first-letter:uppercase'>
-            {QUEST_TYPE[type]}
+            {t(`${type}`)}
           </p>
           <p className='mb-6 text-[92px] leading-[87px] font-black uppercase'>
             {title}
@@ -40,13 +42,14 @@ const QuestDetailPage = async ({ params }: Props) => {
           <div className='pl-10'>
             <div className='mb-5 flex items-center'>
               <InfoBlock borderHeight={5} icon={<ClockIcon color='#FEC432' />}>
-                {duration}хв
+                {duration}
+                {t('min')}
               </InfoBlock>
               <InfoBlock borderHeight={5} icon={<PersonIcon color='#FEC432' />}>
-                {peopleCount[0]}-{peopleCount[1]} осіб
+                {peopleCount[0]}-{peopleCount[1]} {t('persons')}
               </InfoBlock>
               <InfoBlock icon={<PuzzleIcon color='#FEC432' />}>
-                {COMPLEXITY[level]}
+                {t(`${level}`)}
               </InfoBlock>
             </div>
             <p className='max-w-lg mb-8'>{description}</p>

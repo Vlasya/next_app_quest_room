@@ -9,7 +9,7 @@ interface Props {
   tabs: Tab[];
 }
 
-const NavigationTabs = ({ tabs }: Props) => {
+const NavigationTabs = ({ tabs}: Props) => {
   const pathname = usePathname();
   
   const isDetailPage = pathname.includes(ROUTS.DETAILED_QUEST);
