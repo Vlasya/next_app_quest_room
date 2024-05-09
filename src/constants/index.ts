@@ -4,3 +4,4 @@ export * from './endpoints';
 export * from './translations';
 export * from './cookies';
 export * from './routes';
+export * from './languages';

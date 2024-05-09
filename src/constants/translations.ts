@@ -1,9 +1,9 @@
 import { Map } from '@/types';
 
 export const COMPLEXITY: Map = {
-  easy: 'легкий',
-  medium: 'середній',
-  hard: 'складний',
+  easy: 'easy',
+  medium: 'medium',
+  hard: 'hard',
 };
 
 export const QUEST_TYPE: Map = {

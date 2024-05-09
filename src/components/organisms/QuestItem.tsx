@@ -1,10 +1,11 @@
+'use client';
 import { Quest } from '@/types/quests';
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
 import { InfoBlock } from '@/components/molecules';
 import { PuzzleIcon, PersonIcon } from '@/components/icons';
-import { COMPLEXITY } from '@/constants';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   item: Quest;
@@ -12,6 +13,7 @@ interface Props {
 
 const QuestItem = ({ item }: Props) => {
   const { id, title, peopleCount, level } = item;
+  const { t } = useTranslation();
 
   return (
     <Link
@@ -29,10 +31,11 @@ const QuestItem = ({ item }: Props) => {
         <p className='text-2xl font-bold'>{title}</p>
         <div className='flex items-center'>
           <InfoBlock borderHeight={5} isGrey icon={<PersonIcon />}>
-            {peopleCount[0]}-{peopleCount[1]} люд
+            {peopleCount[0]}-{peopleCount[1]}
+            {t('persons')}
           </InfoBlock>
           <InfoBlock isGrey icon={<PuzzleIcon />}>
-            {COMPLEXITY[level]}
+            {t(`${level}`)}
           </InfoBlock>
         </div>
       </div>

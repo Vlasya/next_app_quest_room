@@ -6,8 +6,10 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { ErrorField } from '@/components/atoms';
 import { SignIn } from '@/actions/db/auth';
+import { useTranslation } from 'react-i18next';
 
 const SignInForm = () => {
+  const { t } = useTranslation();
   const {
     handleSubmit,
     formState: { errors: formErrors },
@@ -36,20 +38,20 @@ const SignInForm = () => {
       className=' bg-black p-[20px] rounded-[6px] flex flex-col'
     >
       <div className='flex flex-col mb-[30px] '>
-        <label htmlFor='email'>Email</label>
+        <label htmlFor='email'>{t('email')}</label>
         <input
           {...register('email')}
           className='w-[400px] h-[50px] bg-baseDark rounded-[6px] p-[5px] mt-[5px]'
           id='email'
           name='email'
-          placeholder='Email'
+          placeholder={t('email')}
         />
         {formErrors.email && (
           <ErrorField errorMessage={formErrors.email.message} />
         )}
       </div>
       <div className='flex flex-col mb-[30px] '>
-        <label htmlFor='password'>Password</label>
+        <label htmlFor='password'>{t('password')}</label>
         <input
           {...register('password')}
           className='w-[400px] h-[50px] bg-baseDark rounded-[6px] p-[5px] mt-[5px]'
@@ -66,7 +68,7 @@ const SignInForm = () => {
         className='w-[230px] h-[47px] bg-activeYellow  text-activeBtnText rounded-[6px] self-center'
         type='submit'
       >
-        Sign In
+        {t('signIn')}
       </button>
     </form>
   );

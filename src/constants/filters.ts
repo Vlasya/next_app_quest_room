@@ -11,26 +11,26 @@ export const GENRE_TYPE={
 export const FILTERS = [
   {
     type: GENRE_TYPE.all,
-    label: 'Всі Ігри',
+    label: 'allGames',
   },
   {
     type: GENRE_TYPE.horror,
-    label: 'Страшне',
+    label: 'horror',
   },
   {
     type: GENRE_TYPE.mystic,
-    label: 'Містичне',
+    label: 'mystic',
   },
   {
     type: GENRE_TYPE.detective,
-    label: 'Детективне',
+    label: 'detective',
   },
   {
     type: GENRE_TYPE.adventures,
-    label: 'Пригодне',
+    label: 'adventures',
   },
   {
     type: GENRE_TYPE.sciFi,
-    label: 'Sci-Fi',
+    label: 'sciFi',
   },
 ];

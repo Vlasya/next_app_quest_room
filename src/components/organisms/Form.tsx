@@ -1,3 +1,4 @@
+'use client'
 import { FormType, sendFormSchema } from '@/types';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ErrorField } from '@/components/atoms';
@@ -6,12 +7,14 @@ import { useMutation } from '@tanstack/react-query';
 
 import { toast } from 'react-hot-toast';
 import { sendForm } from '@/actions/http/sendForm';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   onClose: () => void;
 }
 
 const Form = ({ onClose }: Props) => {
+  const { t } = useTranslation();
   const {
     handleSubmit,
     formState: { errors: formErrors },
@@ -46,7 +49,7 @@ const Form = ({ onClose }: Props) => {
       >
         <div className='flex flex-col mb-[30px] '>
           <input
-            placeholder="Ваше ім'я"
+            placeholder={t('yourName')}
             {...register('name')}
             className='w-[400px] h-[50px] bg-baseDark rounded-[6px] p-[5px]'
           />
@@ -56,7 +59,7 @@ const Form = ({ onClose }: Props) => {
         </div>
         <div className='flex flex-col mb-[30px] '>
           <input
-            placeholder='Ваш номер телефону'
+            placeholder={t('yourPhoneNumber')}
             {...register('phone')}
             className='w-[400px] h-[50px] bg-baseDark rounded-[6px] p-[5px] '
           />
@@ -68,7 +71,7 @@ const Form = ({ onClose }: Props) => {
 
         <div className='flex flex-col mb-[30px] '>
           <input
-            placeholder='Кількість гравців'
+            placeholder={t('peopleCount')}
             defaultValue={1}
             type='number'
             {...register('peopleCount')}
@@ -86,8 +89,7 @@ const Form = ({ onClose }: Props) => {
               type='checkbox'
               {...register('isLegal')}
             />
-            Погоджуюсь з правилами обробки персональних даних та угодою
-            користувачів
+            {t('agree')}
           </label>
 
           {formErrors.isLegal && (
@@ -98,7 +100,7 @@ const Form = ({ onClose }: Props) => {
           className='w-[230px] h-[47px] bg-activeYellow  text-activeBtnText rounded-[6px]'
           type='submit'
         >
-          Відправити заявку{' '}
+          {t('send')}
         </button>
       </form>
     </div>
