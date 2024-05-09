@@ -25,7 +25,8 @@ const LanguageChanger = () => {
     // redirect to the new locale path
     if (
       currentLocale === i18nConfig.defaultLocale &&
-      !i18nConfig?.defaultLocale
+      //@ts-ignore
+      !i18nConfig?.prefixDefault
     ) {
       router.push('/' + newLocale + currentPathname);
     } else {
